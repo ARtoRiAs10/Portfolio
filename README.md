@@ -56,7 +56,7 @@ npm install && npm run dev          # → http://localhost:3000
 2. Generate a free API key
 3. Add to `backend/.env` and `.env.local`
 
-Free model: `meta-llama/llama-3.1-8b-instruct:free`
+Free model: `stepfun/step-3.5-flash:free`
 
 ## 📡 API Endpoints
 
