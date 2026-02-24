@@ -69,10 +69,18 @@ Free model: `stepfun/step-3.5-flash:free`
 
 ## 🌐 Deployment with Cloudflare Tunnels (Free)
 
-```bash
-cloudflared tunnel --url http://localhost:3000   # Frontend
-cloudflared tunnel --url http://localhost:8000   # Backend
-```
+> The application is deployed across the following platforms to ensure high availability:
+
+### Frontend (Vercel)
+- URL: [https://learnify-two-nu.vercel.app/](https://portfolio-sooty-eta-82.vercel.app/)
+- Features: Edge caching, automatic CI/CD from GitHub, and optimized Next.js 14 builds.
+
+### Backend (FastAPI)
+- Hosted on: [Your Hosting Provider, e.g., Render / Railway / AWS]
+
+- Environment Configuration:
+    - CORS_ORIGINS: Set to your Vercel URL.
+    - DATABASE_URL: Used Local Storage. 
 
 ## 📄 License
 MIT © [Gaurav Kumar (ARtoRiAs10)](https://github.com/ARtoRiAs10)
