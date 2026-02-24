@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         model: "stepfun/step-3.5-flash:free",
         messages,
-        max_tokens: 500,
+        max_tokens: 1500,
         temperature: 0.7,
       }),
     });
