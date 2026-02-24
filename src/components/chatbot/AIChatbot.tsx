@@ -57,6 +57,7 @@ Email: gauravkumar.dev@gmail.com
 - If asked about "AI," highlight Learnify (RAG) and Pac-Man (RL).
 - For unrelated questions, politely redirect the user to ask about Gaurav's work.`;
 
+
 const SUGGESTED_QUESTIONS = [
   "What are your top projects?",
   "What tech stack do you use?",
@@ -122,7 +123,7 @@ export default function AIChatbot() {
         body: JSON.stringify({
           message: text,
           context: PORTFOLIO_CONTEXT,
-          history: messages.slice(-6).map((m) => ({
+          history: messages.slice(-4).map((m) => ({
             role: m.role,
             content: m.content,
           })),
@@ -142,8 +143,13 @@ export default function AIChatbot() {
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, assistantMessage]);
+      setTimeout(() => {
+        setIsTyping(false);
+        setIsLoading(false);
+      }, 150);
     } catch (error: unknown) {
       setIsTyping(false);
+      setIsLoading(false);
       if (error instanceof Error && error.name === "AbortError") return;
 
       // Fallback: use Claude API directly via Next.js API route
